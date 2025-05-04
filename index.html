@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Formulário UTIMICRO</title>
+</head>
+<body>
+    <header>
+        <div class="indicatorBar">
+            <div class="indicator" id="indicator1">1</div>
+            <div class="bar"></div>
+            <div class="indicator" id="indicator2">2</div>
+            <div class="bar"></div>
+            <div class="indicator" id="indicator3">3</div>
+        </div>
+        <h1 class="indicatorTitle" id="indicatorTitle">Dados Pessoais</h1>
+    </header>
+    <section id="section1">
+            <div class="containerGroup">
+                <div class="containerInput">
+                    <label for="txtNome">Nome Completo</label>
+                    <input type="text" name="txtNome" id="txtNome" class="input">
+                </div>
+            </div>
+            <div class="containerGroup">
+                <div class="containerInput">
+                    <label for="numTel">Telefone</label>
+                    <input type="text" name="numTel" id="numTel" class="input" placeholder="(99)99999-9999">
+                </div>
+            </div>
+            <div class="containerGroup">
+                <div class="containerInput">
+                    <label for="txtEndereco">rua/logradouro</label>
+                    <input type="text" name="txtEndereco" id="txtEndereco" class="input">
+                </div>
+            </div>
+            <div class="containerGroup">
+                <div class="containerInput">
+                    <label for="numNumero">Número</label>
+                    <input type="number" name="numNumero" id="numNumero" class="input" min="0">
+                </div>
+                <div class="containerInput">
+                    <label for="txtComplemento">Complemento</label>
+                    <input type="text" name="txtComplemento" id="txtComplemento" class="input">
+                </div>
+            </div>
+            <div class="containerGroup">
+                <div class="containerInput">
+                    <label for="txtBairro">Bairro</label>
+                    <input type="text" name="txtBairro" id="txtBairro" class="input">
+                </div>
+            </div>
+            <div class="containerGroup">
+                <div class="containerInput">
+                    <label for="txtCidade">Cidade</label>
+                    <input type="text" name="txtCidade" id="txtCidade" class="input">
+                </div>
+            </div>
+    </section>
+    <section>
+        <h1>Sessão 2</h1>
+    </section>
+    <section>
+        <h1>Sessão 3</h1>
+    </section>
+    <footer>
+        <div class="containerButtons">
+            <button class="buttonBack" id="buttonBack">Voltar</button>
+            <button class="buttonNext" id="buttonNext">próximo</button>
+        </div>
+    </footer>
+
+
+    <script src="script/script.js"></script>
+</body>
+</html>

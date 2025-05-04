@@ -1,0 +1,159 @@
+header{
+    width: 100%;
+    height: fit-content;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    margin: 40px 0px;
+}
+
+header .indicatorBar{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 5px;
+}
+
+header .indicatorBar .indicator{
+    width: 35px;
+    height: 35px;
+    background: var(--cor3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--fontPrincipal);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: bolder;    
+}
+
+header .active{
+    background: var(--cor1) !important;
+    color: white !important;
+}
+
+header .bar{
+    width: 60px;
+    height: 5px;
+    border-radius: 5px;
+    background: var(--cor2);
+}
+
+header .indicatorTitle{
+    font-family: var(--fontPrincipal);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 900;    
+    text-align: center;
+}
+
+section{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    /* border: 1px solid red; */
+}
+
+section .containerGroup{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 30px;
+}
+
+section .containerInput{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 5px;
+    /* border: 1px solid blue; */
+    flex: 1;
+}
+
+
+section .containerInput > label{
+    font-family: var(--fontPrincipal);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 900;   
+}
+
+section .containerInput > input{
+    width: 100%;
+    height: 30px;
+    outline: 1px solid var(--cor1);
+    border-radius: 5px;
+    text-indent: 10px;
+    font-family: var(--fontPrincipal);
+    font-weight: bold;
+}
+
+
+
+footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .containerButtons{
+    width: 80%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 40px;
+    gap: 10px;
+}
+
+.containerButtons button{
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.containerButtons button.buttonNext{
+    background: var(--cor1);
+    font-family: var(--fontPrincipal);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 900;   
+    color: white;
+    cursor: pointer;
+}
+
+.containerButtons button.buttonBack{
+    display: none;
+    background: none;
+    font-family: var(--fontPrincipal);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 900;   
+    color: var(--cor1);
+    cursor: pointer;
+    outline: 1px solid var(--cor1);
+}
