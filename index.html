@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/reset.css">
     <link rel="stylesheet" href="style/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Formulário UTIMICRO</title>
 </head>
 <body>
@@ -18,7 +19,7 @@
         </div>
         <h1 class="indicatorTitle" id="indicatorTitle">Dados Pessoais</h1>
     </header>
-    <section id="section1">
+    <section>
             <div class="containerGroup">
                 <div class="containerInput">
                     <label for="txtNome">Nome Completo</label>
@@ -27,7 +28,7 @@
             </div>
             <div class="containerGroup">
                 <div class="containerInput">
-                    <label for="numTel">Telefone</label>
+                    <label for="numTel">Telefone (Celular)</label>
                     <input type="text" name="numTel" id="numTel" class="input" placeholder="(99)99999-9999">
                 </div>
             </div>
@@ -61,7 +62,61 @@
             </div>
     </section>
     <section>
-        <h1>Sessão 2</h1>
+        <div class="containerQuestions">
+            <div class="containerQuestion">
+                <h1 class="question">Pergunta 1</h1>
+                <div class="containerRadios">
+                    <div class="containerRadio">
+                        <label for="rd1P1">
+                            <input type="radio" name="rdPergunta" id="rd1P1" checked>
+                            <span class="radioMark"></span>
+                            Resposta 1
+                        </label>
+                    </div>
+                    <div class="containerRadio">
+                        <label for="rd2P1">
+                            <input type="radio" name="rdPergunta" id="rd2P1">
+                            <span class="radioMark"></span>
+                            Resposta 2
+                        </label>
+                    </div>
+                    <div class="containerRadio">
+                        <label for="rd3P1">
+                            <input type="radio" name="rdPergunta" id="rd3P1">
+                            <span class="radioMark"></span>
+                            Resposta 3
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="separatorBar"></div>
+            <div class="containerQuestion">
+                <h1 class="question">Pergunta 1</h1>
+                <div class="containerRadios">
+                    <div class="containerRadio">
+                        <label for="rd1P2">
+                            <input type="radio" name="rdPergunta2" id="rd1P2">
+                            <span class="radioMark"></span>
+                            Resposta 1
+                        </label>
+                    </div>
+                    <div class="containerRadio">
+                        <label for="rd2P2">
+                            <input type="radio" name="rdPergunta2" id="rd2P2">
+                            <span class="radioMark"></span>
+                            Resposta 2
+                        </label>
+                    </div>
+                    <div class="containerRadio">
+                        <label for="rd3P2">
+                            <input type="radio" name="rdPergunta2" id="rd3P2">
+                            <span class="radioMark"></span>
+                            Resposta 3
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <section>
         <h1>Sessão 3</h1>
