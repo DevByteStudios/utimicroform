@@ -165,7 +165,7 @@ section .containerQuestions .question{
     text-align: left;
 }
 
-section .containerQuestions .containerRadios{
+section .containerQuestions .containerOptions{
     width: 100%;
     height: fit-content;
     display: flex;
@@ -173,7 +173,7 @@ section .containerQuestions .containerRadios{
     gap: 5px;
 }
 
-section .containerQuestions .containerRadios .containerRadio{
+section .containerQuestions .containerOptions .containerRadio{
     width: 100%;
     display: flex;
     align-items: center;
@@ -182,7 +182,7 @@ section .containerQuestions .containerRadios .containerRadio{
     gap: 5px;
 }
 
-.containerRadio label{
+.containerOption label{
     width: fit-content;
     height: fit-content;
     font-family: var(--fontPrincipal);
@@ -198,13 +198,13 @@ section .containerQuestions .containerRadios .containerRadio{
     gap: 5px;
 }
 
-.containerRadio input[type='radio']{
+.containerOption input[type='radio']{
     width: 20px;
     height: 20px;
     display: none;
 }
 
-.containerRadio .radioMark{
+.containerOption .radioMark{
     display: inline-block;
     position: relative;
     width: 20px;
@@ -213,7 +213,7 @@ section .containerQuestions .containerRadios .containerRadio{
     border-radius: 50%;
 }
 
-.containerRadio .radioMark::before{
+.containerOption .radioMark::before{
     content: "";
     width: 10px;
     height: 10px;
@@ -225,7 +225,7 @@ section .containerQuestions .containerRadios .containerRadio{
     transform: translate(-50%, -50%) scale(0);
 }
 
-.containerRadio input[type="radio"]:checked ~ .radioMark::before{
+.containerOption input[type="radio"]:checked ~ .radioMark::before{
     transform: translate(-50%, -50%) scale(1);
 }
 
