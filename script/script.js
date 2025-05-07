@@ -54,49 +54,52 @@ buttonNext.addEventListener("click",()=>{
     // if(actualSection == 0){
     //     formDadosPessoais.nome = document.getElementById('txtNome').value;
     //     if(formDadosPessoais.nome == ''){
-    //         popupMensagem('error','Digite seu nome completo!','Aviso');
+    //         popupMsg('error','Digite seu nome completo!','Aviso');
     //         return;
     //     }
     //     formDadosPessoais.telefone = document.getElementById('numTel').value;
     //     const numeroLimpo = formDadosPessoais.telefone.replace(/\D/g, '');
     //     if(numeroLimpo.length < 10){
-    //         popupMensagem('error','Telefone incompleto! Digite o DDD e o número completo.','Aviso');
+    //         popupMsg('error','Telefone incompleto! Digite o DDD e o número completo.','Aviso');
     //         return;
     //     }
     //     if(numeroLimpo.length === 10 && numeroLimpo.charAt(2) === '9'){
-    //         popupMensagem('error','Número de celular incompleto! Verifique se digitou o 9 e todos os outros dígitos.','Aviso');
+    //         popupMsg('error','Número de celular incompleto! Verifique se digitou o 9 e todos os outros dígitos.','Aviso');
     //         return;
     //     }
     //     formDadosPessoais.rua = document.getElementById('txtEndereco').value;
     //     if(formDadosPessoais.rua == ''){
-    //         popupMensagem('error','Digite seu endereço!','Aviso');
+    //         popupMsg('error','Digite seu endereço!','Aviso');
     //         return;
     //     }
     //     formDadosPessoais.numero = document.getElementById('numNumero').value;
     //     if(formDadosPessoais.numero == ''){
-    //         popupMensagem('error','Digite o número de sua casa!','Aviso');
+    //         popupMsg('error','Digite o número de sua casa!','Aviso');
     //         return;
     //     }
     //     formDadosPessoais.bairro = document.getElementById('txtBairro').value;
     //     if(formDadosPessoais.bairro == ''){
-    //         popupMensagem('error','Digite seu bairro!','Aviso');
+    //         popupMsg('error','Digite seu bairro!','Aviso');
     //         return;
     //     }
     //     formDadosPessoais.cidade = document.getElementById('txtCidade').value;
     //     if(formDadosPessoais.cidade == ''){
-    //         popupMensagem('error','Digite sua cidade!','Aviso');
+    //         popupMsg('error','Digite sua cidade!','Aviso');
     //         return;
     //     }
     //     formDadosPessoais.complemento = document.getElementById('txtBairro').value;
     // }
-    if(actualSection < 2){
         actualSection += 1;
+        if(actualSection == 3){
+            loadMsg();
+            window.location.reload()
+        }
         if(actualSection == 2){
             buttonNext.innerText = "Finalizar";
         }else{
             buttonNext.innerText = "Próximo";
         }
-    }
+
     exibirSections();
     if(actualSection > 0){
         buttonBack.style.display = "flex";
@@ -141,7 +144,7 @@ const formatTel = () =>{
     let valorNormal = valor.replace(/\D/g, '').slice(0, 11); // Só os números
 }
 
-const popupMensagem = (icon,txtMsg,txtTitle) =>{
+const popupMsg = (icon,txtMsg,txtTitle) =>{
     Swal.fire({
         title: txtTitle,
         text: txtMsg,
@@ -149,3 +152,23 @@ const popupMensagem = (icon,txtMsg,txtTitle) =>{
       });
 }
 
+
+// Preparar a mensagem para o whatszapp
+const loadMsg = () => {
+    let msgForm = '*Informações do Cliente:* %0A';
+    msgForm = msgForm.concat('*Nome:* ',formDadosPessoais.nome,"%0A");
+    msgForm =  msgForm.concat('*Telefone:* ',formDadosPessoais.telefone,"%0A");
+    msgForm = msgForm.concat('*Rua/Logradouro:* ',formDadosPessoais.rua,'%0A');
+    msgForm = msgForm.concat('*Bairro:* ',formDadosPessoais.bairro,"%0A");
+    msgForm = msgForm.concat('*Número:* ',formDadosPessoais.numero,'%20%20%20');
+    msgForm = msgForm.concat('*Complemento:* ',formDadosPessoais.complemento,'%0A');
+    msgForm = msgForm.concat('*Cidade:* ',formDadosPessoais.cidade,'%0A');
+
+    // msgForm = encodeURIComponent(msgForm);
+
+    let url = new String(
+        "https://api.whatsapp.com/send?phone=5511949335503&text="
+      );
+      url = url.concat(msgForm);
+      window.open(url, '_blank');
+}
