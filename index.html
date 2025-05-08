@@ -64,90 +64,89 @@
     </section>
     <!-- PERGUNTAS SOBRE O APARELHO -->
     <section>
-        <div class="containerQuestions">
+        <div class="containerQuestions" id="containerServiço">
             <div class="containerQuestion">
-                <h1 class="question">Pergunta 1</h1>
-                <div class="containerOptions">
-                    <div class="containerOption">
-                        <label for="rd1P1">
-                            <input type="radio" name="rdPergunta" id="rd1P1" checked>
-                            <span class="radioMark"></span>
-                            Resposta 1
-                        </label>
-                    </div>
-                    <div class="containerOption">
-                        <label for="rd2P1">
-                            <input type="radio" name="rdPergunta" id="rd2P1">
-                            <span class="radioMark"></span>
-                            Resposta 2
-                        </label>
-                    </div>
-                    <div class="containerOption">
-                        <label for="rd3P1">
-                            <input type="radio" name="rdPergunta" id="rd3P1">
-                            <span class="radioMark"></span>
-                            Resposta 3
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="separatorBar"></div>
-            <div class="containerQuestion">
-                <h1 class="question">Pergunta 2</h1>
-                <div class="containerOptions">
-                    <div class="containerOption">
-                        <label for="rd1P2">
-                            <input type="radio" name="rdPergunta2" id="rd1P2">
-                            <span class="radioMark"></span>
-                            Resposta 1
-                        </label>
-                    </div>
-                    <div class="containerOption">
-                        <label for="rd2P2">
-                            <input type="radio" name="rdPergunta2" id="rd2P2">
-                            <span class="radioMark"></span>
-                            Resposta 2
-                        </label>
-                    </div>
-                    <div class="containerOption">
-                        <label for="rd3P2">
-                            <input type="radio" name="rdPergunta2" id="rd3P2">
-                            <span class="radioMark"></span>
-                            Resposta 3
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="containerQuestions">
-            <div class="containerQuestion">
-                <h1 class="question">Serviço 1</h1>
+                <h1 class="question">Serviços</h1>
                 <div class="containerOptions">
                     <div class="containerOption">
                         <label for="rd1S1">
-                            <input type="radio" name="rdPergunta" id="rd1S1" checked>
+                            <input type="radio" name="rdServico" id="rd1S1" value="s1">
                             <span class="radioMark"></span>
-                            Resposta 1
+                            Computador
                         </label>
                     </div>
                     <div class="containerOption">
                         <label for="rd2S1">
-                            <input type="radio" name="rdPergunta" id="rd2S1">
+                            <input type="radio" name="rdServico" id="rd2S1" value="s2">
                             <span class="radioMark"></span>
-                            Resposta 2
+                            Notebook
                         </label>
                     </div>
                     <div class="containerOption">
                         <label for="rd3S1">
-                            <input type="radio" name="rdPergunta" id="rd3S1">
+                            <input type="radio" name="rdServico" id="rd3S1" value="s3">
                             <span class="radioMark"></span>
-                            Resposta 3
+                            Serviços de Rede
+                        </label>
+                    </div>
+                    <div class="containerOption">
+                        <label for="rd4S1">
+                            <input type="radio" name="rdServico" id="rd4S1" value="s4">
+                            <span class="radioMark"></span>
+                            Serviços de Câmeras
                         </label>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="containerQuestions">
+        <!-- COLOCAR AS SUBPERGUNTAS NA ORDEM CORRETA -->
+        <!-- COMPUTADOR E NOTEBOOK-->
+        <div class="containerSubQuestions containerQuestions">
+            <div class="containerQuestion">
+                <h1 class="question">O que deseja?</h1>
+                <div class="containerOptions">
+                    <div class="containerOption">
+                        <label for="rd1P1">
+                            <input type="radio" name="rdS1" id="rd1P1">
+                            <span class="radioMark"></span>
+                            Manutenção
+                        </label>
+                    </div>
+                    <div class="containerOption">
+                        <label for="rd2P1">
+                            <input type="radio" name="rdS1" id="rd2P1">
+                            <span class="radioMark"></span>
+                            Limpeza
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- REDE -->
+        <div class="containerSubQuestions containerQuestions">
+            <div class="containerQuestion">
+                <h1 class="question">O que deseja?</h1>
+                <div class="containerOptions">
+                    <div class="containerOption">
+                        <label for="rd1P2">
+                            <input type="radio" name="rdServico" id="rd1P2">
+                            <span class="radioMark"></span>
+                            Instalação
+                        </label>
+                    </div>
+                    <div class="containerOption">
+                        <label for="rd2P2">
+                            <input type="radio" name="rdServico" id="rd2P2">
+                            <span class="radioMark"></span>
+                            Reparo
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- CAMERA -->
+
+        <div class="containerQuestions" id="containerTextareaServiço">
             <div class="containerQuestion">
                 <h1 class="question">Outro </h1>
                 <p class="desc">Dê mais detalhes</p>
@@ -166,6 +165,6 @@
     </footer>
 
 
-    <script src="script/script.js"></script>
+    <script src="script/script.js" type="module"></script>
 </body>
 </html>

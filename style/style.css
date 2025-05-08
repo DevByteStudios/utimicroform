@@ -148,6 +148,10 @@ section .containerQuestions{
     gap: 10px;
 }
 
+section .containerSubQuestions{
+    display: none;
+}
+
 section .containerQuestion{
     width: 100%;
     height: fit-content;
@@ -172,11 +176,9 @@ section .containerQuestion > textarea{
     resize: none;
 }
 
-
-
 section .containerQuestions .question{
     font-family: var(--fontPrincipal);
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-transform: uppercase;
     font-weight: 900;    
     text-align: left;

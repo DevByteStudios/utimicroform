@@ -1,3 +1,4 @@
+
 // Pegando os componentes
 const indicators = [...document.getElementsByClassName('indicator')]
 const sections = [...document.querySelectorAll('section')];
@@ -155,16 +156,16 @@ const popupMsg = (icon,txtMsg,txtTitle) =>{
 
 // Preparar a mensagem para o whatszapp
 const loadMsg = () => {
-    let msgForm = '*Informações do Cliente:* %0A';
-    msgForm = msgForm.concat('*Nome:* ',formDadosPessoais.nome,"%0A");
-    msgForm =  msgForm.concat('*Telefone:* ',formDadosPessoais.telefone,"%0A");
-    msgForm = msgForm.concat('*Rua/Logradouro:* ',formDadosPessoais.rua,'%0A');
-    msgForm = msgForm.concat('*Bairro:* ',formDadosPessoais.bairro,"%0A");
-    msgForm = msgForm.concat('*Número:* ',formDadosPessoais.numero,'%20%20%20');
-    msgForm = msgForm.concat('*Complemento:* ',formDadosPessoais.complemento,'%0A');
-    msgForm = msgForm.concat('*Cidade:* ',formDadosPessoais.cidade,'%0A');
+    let msgInfoCliente = '*Informações do Cliente:* %0A';
+    msgInfoCliente = msgInfoCliente.concat('*Nome:* ',formDadosPessoais.nome,"%0A");
+    msgInfoCliente =  msgInfoCliente.concat('*Telefone:* ',formDadosPessoais.telefone,"%0A");
+    msgInfoCliente = msgInfoCliente.concat('*Rua/Logradouro:* ',formDadosPessoais.rua,'%0A');
+    msgInfoCliente = msgInfoCliente.concat('*Bairro:* ',formDadosPessoais.bairro,"%0A");
+    msgInfoCliente = msgInfoCliente.concat('*Número:* ',formDadosPessoais.numero,'%20%20%20');
+    msgInfoCliente = msgInfoCliente.concat('*Complemento:* ',formDadosPessoais.complemento,'%0A');
+    msgInfoCliente = msgInfoCliente.concat('*Cidade:* ',formDadosPessoais.cidade,'%0A');
 
-    // msgForm = encodeURIComponent(msgForm);
+    // msgInfoCliente = encodeURIComponent(msgInfoCliente);
 
     let url = new String(
         "https://api.whatsapp.com/send?phone=5511949335503&text="
@@ -172,3 +173,6 @@ const loadMsg = () => {
       url = url.concat(msgForm);
       window.open(url, '_blank');
 }
+
+import fluxo from "./fluxo.js";
+fluxo();
