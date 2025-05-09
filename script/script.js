@@ -175,5 +175,5 @@ const loadMsg = () => {
       window.open(url, '_blank');
 }
 
-// import fluxo from "./fluxo.js";
-// fluxo();
+import fluxo from "./fluxo.js";
+fluxo();
