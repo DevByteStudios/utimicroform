@@ -11,8 +11,7 @@ const fluxo = () =>{
                 containerSubQuestions[0].style.display = 'flex';
             }else if(index == 2){
                 containerSubQuestions[1].style.display = 'flex';
-            }
-            
+            } 
         });
     });
 }

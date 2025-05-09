@@ -52,56 +52,57 @@ const exibirSections = () =>{
 
 buttonNext.addEventListener("click",()=>{
     // Verifica os campos do formulario na primeira sessão
-    // if(actualSection == 0){
-    //     formDadosPessoais.nome = document.getElementById('txtNome').value;
-    //     if(formDadosPessoais.nome == ''){
-    //         popupMsg('error','Digite seu nome completo!','Aviso');
-    //         return;
-    //     }
-    //     formDadosPessoais.telefone = document.getElementById('numTel').value;
-    //     const numeroLimpo = formDadosPessoais.telefone.replace(/\D/g, '');
-    //     if(numeroLimpo.length < 10){
-    //         popupMsg('error','Telefone incompleto! Digite o DDD e o número completo.','Aviso');
-    //         return;
-    //     }
-    //     if(numeroLimpo.length === 10 && numeroLimpo.charAt(2) === '9'){
-    //         popupMsg('error','Número de celular incompleto! Verifique se digitou o 9 e todos os outros dígitos.','Aviso');
-    //         return;
-    //     }
-    //     formDadosPessoais.rua = document.getElementById('txtEndereco').value;
-    //     if(formDadosPessoais.rua == ''){
-    //         popupMsg('error','Digite seu endereço!','Aviso');
-    //         return;
-    //     }
-    //     formDadosPessoais.numero = document.getElementById('numNumero').value;
-    //     if(formDadosPessoais.numero == ''){
-    //         popupMsg('error','Digite o número de sua casa!','Aviso');
-    //         return;
-    //     }
-    //     formDadosPessoais.bairro = document.getElementById('txtBairro').value;
-    //     if(formDadosPessoais.bairro == ''){
-    //         popupMsg('error','Digite seu bairro!','Aviso');
-    //         return;
-    //     }
-    //     formDadosPessoais.cidade = document.getElementById('txtCidade').value;
-    //     if(formDadosPessoais.cidade == ''){
-    //         popupMsg('error','Digite sua cidade!','Aviso');
-    //         return;
-    //     }
-    //     formDadosPessoais.complemento = document.getElementById('txtBairro').value;
-    // }
-        actualSection += 1;
+    if(actualSection == 0){
+        formDadosPessoais.nome = document.getElementById('txtNome').value;
+        if(formDadosPessoais.nome == ''){
+            popupMsg('error','Digite seu nome completo!','Aviso');
+            return;
+        }
+        formDadosPessoais.telefone = document.getElementById('numTel').value;
+        const numeroLimpo = formDadosPessoais.telefone.replace(/\D/g, '');
+        if(numeroLimpo.length < 10){
+            popupMsg('error','Telefone incompleto! Digite o DDD e o número completo.','Aviso');
+            return;
+        }
+        if(numeroLimpo.length === 10 && numeroLimpo.charAt(2) === '9'){
+            popupMsg('error','Número de celular incompleto! Verifique se digitou o 9 e todos os outros dígitos.','Aviso');
+            return;
+        }
+        formDadosPessoais.rua = document.getElementById('txtEndereco').value;
+        if(formDadosPessoais.rua == ''){
+            popupMsg('error','Digite seu endereço!','Aviso');
+            return;
+        }
+        formDadosPessoais.numero = document.getElementById('numNumero').value;
+        if(formDadosPessoais.numero == ''){
+            popupMsg('error','Digite o número de sua casa!','Aviso');
+            return;
+        }
+        formDadosPessoais.bairro = document.getElementById('txtBairro').value;
+        if(formDadosPessoais.bairro == ''){
+            popupMsg('error','Digite seu bairro!','Aviso');
+            return;
+        }
+        formDadosPessoais.cidade = document.getElementById('txtCidade').value;
+        if(formDadosPessoais.cidade == ''){
+            popupMsg('error','Digite sua cidade!','Aviso');
+            return;
+        }
+        formDadosPessoais.complemento = document.getElementById('txtBairro').value;
+    }
+       actualSection += 1;  
+       console.log(actualSection)
+       if(actualSection <= 2){
+        exibirSections();
+        }
         if(actualSection == 3){
             loadMsg();
-            window.location.reload()
-        }
+        }   
         if(actualSection == 2){
             buttonNext.innerText = "Finalizar";
         }else{
             buttonNext.innerText = "Próximo";
         }
-
-    exibirSections();
     if(actualSection > 0){
         buttonBack.style.display = "flex";
     }
@@ -170,9 +171,9 @@ const loadMsg = () => {
     let url = new String(
         "https://api.whatsapp.com/send?phone=5511949335503&text="
       );
-      url = url.concat(msgForm);
+      url = url.concat(msgInfoCliente);
       window.open(url, '_blank');
 }
 
-import fluxo from "./fluxo.js";
-fluxo();
+// import fluxo from "./fluxo.js";
+// fluxo();
