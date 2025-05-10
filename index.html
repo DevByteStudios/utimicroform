@@ -1,170 +1,469 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/reset.css">
-    <link rel="stylesheet" href="style/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/reset.css" />
+    <link rel="stylesheet" href="style/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>UTIMICRO - FORM</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="indicatorBar">
-            <div class="indicator" id="indicator1">1</div>
-            <div class="bar"></div>
-            <div class="indicator" id="indicator2">2</div>
-            <div class="bar"></div>
-            <div class="indicator" id="indicator3">3</div>
-        </div>
-        <h1 class="indicatorTitle" id="indicatorTitle">Dados Pessoais</h1>
+      <div class="indicatorBar">
+        <div class="indicator" id="indicator1">1</div>
+        <div class="bar"></div>
+        <div class="indicator" id="indicator2">2</div>
+        <div class="bar"></div>
+        <div class="indicator" id="indicator3">3</div>
+      </div>
+      <h1 class="indicatorTitle" id="indicatorTitle">Dados Pessoais</h1>
     </header>
     <!-- PERGUNTAS DO FORMULARIO -->
     <section>
-            <div class="containerGroup">
-                <div class="containerInput">
-                    <label for="txtNome">Nome Completo</label>
-                    <input type="text" name="txtNome" id="txtNome" class="input">
-                </div>
-            </div>
-            <div class="containerGroup">
-                <div class="containerInput">
-                    <label for="numTel">Telefone (Celular)</label>
-                    <input type="text" name="numTel" id="numTel" class="input" placeholder="(99)99999-9999">
-                </div>
-            </div>
-            <div class="containerGroup">
-                <div class="containerInput">
-                    <label for="txtEndereco">rua/logradouro</label>
-                    <input type="text" name="txtEndereco" id="txtEndereco" class="input">
-                </div>
-            </div>
-            <div class="containerGroup">
-                <div class="containerInput">
-                    <label for="numNumero">Número</label>
-                    <input type="number" name="numNumero" id="numNumero" class="input" min="0">
-                </div>
-                <div class="containerInput">
-                    <label for="txtComplemento">Complemento</label>
-                    <input type="text" name="txtComplemento" id="txtComplemento" class="input">
-                </div>
-            </div>
-            <div class="containerGroup">
-                <div class="containerInput">
-                    <label for="txtBairro">Bairro</label>
-                    <input type="text" name="txtBairro" id="txtBairro" class="input">
-                </div>
-            </div>
-            <div class="containerGroup">
-                <div class="containerInput">
-                    <label for="txtCidade">Cidade</label>
-                    <input type="text" name="txtCidade" id="txtCidade" class="input">
-                </div>
-            </div>
+      <div class="containerGroup">
+        <div class="containerInput">
+          <label for="txtNome">Nome Completo</label>
+          <input type="text" name="txtNome" id="txtNome" class="input" />
+        </div>
+      </div>
+      <div class="containerGroup">
+        <div class="containerInput">
+          <label for="numTel">Telefone (Celular)</label>
+          <input
+            type="text"
+            name="numTel"
+            id="numTel"
+            class="input"
+            placeholder="(99)99999-9999"
+          />
+        </div>
+      </div>
+      <div class="containerGroup">
+        <div class="containerInput">
+          <label for="txtEndereco">rua/logradouro</label>
+          <input
+            type="text"
+            name="txtEndereco"
+            id="txtEndereco"
+            class="input"
+          />
+        </div>
+      </div>
+      <div class="containerGroup">
+        <div class="containerInput">
+          <label for="numNumero">Número</label>
+          <input
+            type="number"
+            name="numNumero"
+            id="numNumero"
+            class="input"
+            min="0"
+          />
+        </div>
+        <div class="containerInput">
+          <label for="txtComplemento">Complemento</label>
+          <input
+            type="text"
+            name="txtComplemento"
+            id="txtComplemento"
+            class="input"
+          />
+        </div>
+      </div>
+      <div class="containerGroup">
+        <div class="containerInput">
+          <label for="txtBairro">Bairro</label>
+          <input type="text" name="txtBairro" id="txtBairro" class="input" />
+        </div>
+      </div>
+      <div class="containerGroup">
+        <div class="containerInput">
+          <label for="txtCidade">Cidade</label>
+          <input type="text" name="txtCidade" id="txtCidade" class="input" />
+        </div>
+      </div>
     </section>
+
     <!-- PERGUNTAS SOBRE O APARELHO -->
     <section>
-        <div class="containerQuestions" id="containerServiço">
-            <div class="containerQuestion">
-                <h1 class="question">Serviços</h1>
-                <div class="containerOptions">
-                    <div class="containerOption">
-                        <label for="rd1S1">
-                            <input type="radio" name="rdServico" id="rd1S1" value="s1">
-                            <span class="radioMark"></span>
-                            Computador
-                        </label>
-                    </div>
-                    <div class="containerOption">
-                        <label for="rd2S1">
-                            <input type="radio" name="rdServico" id="rd2S1" value="s2">
-                            <span class="radioMark"></span>
-                            Notebook
-                        </label>
-                    </div>
-                    <div class="containerOption">
-                        <label for="rd3S1">
-                            <input type="radio" name="rdServico" id="rd3S1" value="s3">
-                            <span class="radioMark"></span>
-                            Serviços de Rede
-                        </label>
-                    </div>
-                    <div class="containerOption">
-                        <label for="rd4S1">
-                            <input type="radio" name="rdServico" id="rd4S1" value="s4">
-                            <span class="radioMark"></span>
-                            Serviços de Câmeras
-                        </label>
-                    </div>
-                </div>
+      <!-- Serviço principal -->
+      <div class="containerQuestions" id="containerServiço">
+        <div class="containerQuestion">
+          <h1 class="question">Serviços</h1>
+          <div class="containerOptions">
+            <div class="containerOption">
+              <label for="rd1S1">
+                <input
+                  type="radio"
+                  name="rdServico"
+                  id="rd1S1"
+                  value="computador | notebook"
+                />
+                <span class="radioMark"></span>
+                Computador | Notebook
+              </label>
             </div>
-        </div>
-        <!-- COLOCAR AS SUBPERGUNTAS NA ORDEM CORRETA -->
-        <!-- COMPUTADOR E NOTEBOOK-->
-        <div class="containerSubQuestions containerQuestions">
-            <div class="containerQuestion">
-                <h1 class="question">O que deseja?</h1>
-                <div class="containerOptions">
-                    <div class="containerOption">
-                        <label for="rd1P1">
-                            <input type="radio" name="rdS1" id="rd1P1">
-                            <span class="radioMark"></span>
-                            Manutenção
-                        </label>
-                    </div>
-                    <div class="containerOption">
-                        <label for="rd2P1">
-                            <input type="radio" name="rdS1" id="rd2P1">
-                            <span class="radioMark"></span>
-                            Limpeza
-                        </label>
-                    </div>
-                </div>
+            <div class="containerOption">
+              <label for="rd2S1">
+                <input type="radio" name="rdServico" id="rd2S1" value="Rede" />
+                <span class="radioMark"></span>
+                Serviços de Rede
+              </label>
             </div>
-        </div>
-        <!-- REDE -->
-        <div class="containerSubQuestions containerQuestions">
-            <div class="containerQuestion">
-                <h1 class="question">O que deseja?</h1>
-                <div class="containerOptions">
-                    <div class="containerOption">
-                        <label for="rd1P2">
-                            <input type="radio" name="rdServico" id="rd1P2">
-                            <span class="radioMark"></span>
-                            Instalação
-                        </label>
-                    </div>
-                    <div class="containerOption">
-                        <label for="rd2P2">
-                            <input type="radio" name="rdServico" id="rd2P2">
-                            <span class="radioMark"></span>
-                            Reparo
-                        </label>
-                    </div>
-                </div>
+            <div class="containerOption">
+              <label for="rd3S1">
+                <input
+                  type="radio"
+                  name="rdServico"
+                  id="rd3S1"
+                  value="Cameras"
+                />
+                <span class="radioMark"></span>
+                Serviços de Câmeras
+              </label>
             </div>
+          </div>
         </div>
-        <!-- CAMERA -->
+      </div>
+      <!-- Computador | notebook -->
+      <div class="containerAction containerQuestions">
+        <div class="containerQuestion">
+          <h1 class="question">O que deseja?</h1>
+          <div class="containerOptions">
+            <div class="containerOption">
+              <label for="rd1P1">
+                <input
+                  type="radio"
+                  name="rdAcao"
+                  id="rd1P1"
+                  value="manutenção"
+                />
+                <span class="radioMark"></span>
+                Manutenção
+              </label>
+            </div>
+            <div class="containerOption">
+              <label for="rd2P1">
+                <input type="radio" name="rdAcao" id="rd2P1" value="limpeza" />
+                <span class="radioMark"></span>
+                Limpeza
+              </label>
+            </div>
+            <div class="containerOption">
+              <label for="rd3P1">
+                <input
+                  type="radio"
+                  name="rdAcao"
+                  id="rd3P1"
+                  value="instalação de software"
+                />
+                <span class="radioMark"></span>
+                Instalação de Software
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Computador | notebook > Manutenção > Problemas -->
+      <div class="containerProblem containerQuestions">
+        <div class="containerQuestion">
+          <h1 class="question">Selecione o(s) problema(s)</h1>
+          <div class="containerOptions">
+            <div class="containerOption">
+              <label for="cb1A1P">
+                <input
+                  type="checkbox"
+                  name="cbProblema"
+                  id="cb1A1P"
+                  value="Não liga"
+                />
+                <span class="checkboxMark"></span>
+                Não liga
+              </label>
+            </div>
+            <div class="containerOption">
+              <label for="cb2A1P">
+                <input
+                  type="checkbox"
+                  name="cbProblema"
+                  id="cb2A1P"
+                  value="Liga mas não dá vídeo"
+                />
+                <span class="checkboxMark"></span>
+                Liga mas não dá vídeo
+              </label>
+            </div>
+            <div class="containerOption">
+              <label for="cb3A1P">
+                <input
+                  type="checkbox"
+                  name="cbProblema"
+                  id="cb3A1P"
+                  value="Tela azul ou travamentos"
+                />
+                <span class="checkboxMark"></span>
+                Tela azul ou travamentos
+              </label>
+            </div>
+            <div class="containerOption">
+              <label for="cb4A1P">
+                <input
+                  type="checkbox"
+                  name="cbProblema"
+                  id="cb4A1P"
+                  value="Superaquecimento"
+                />
+                <span class="checkboxMark"></span>
+                Superaquecimento
+              </label>
+            </div>
+            <div class="containerOption">
+              <label for="cb5A1P">
+                <input
+                  type="checkbox"
+                  name="cbProblema"
+                  id="cb5A1P"
+                  value="Problemas com áudio"
+                />
+                <span class="checkboxMark"></span>
+                Problemas com áudio
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Computador | notebook > Limpeza > Problemas -->
+      <div class="containerProblem containerQuestions">
+        <div class="containerQuestion">
+          <h1 class="question">O que está acontecendo?</h1>
+          <div class="containerOptions">
+            <div class="containerOption">
+              <label for="cb1A2P">
+                <input
+                  type="checkbox"
+                  name="cbProblema"
+                  id="cb1A2P"
+                  value="Lentidão"
+                />
+                <span class="checkboxMark"></span>
+                Lentidão
+              </label>
+            </div>
+            <div class="containerOption">
+              <label for="cb2A2P">
+                <input
+                  type="checkbox"
+                  name="cbProblema"
+                  id="cb2A2P"
+                  value="Sem Espaço"
+                />
+                <span class="checkboxMark"></span>
+                Sem Espaço
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Computador | notebook > Instalação de Software > Problemas -->
+      <div class="containerProblem containerQuestions">
+        <div class="containerQuestion">
+          <h1 class="question">Quais programas deseja?</h1>
+          <div class="containerOptions">
+            <div class="containerOption">
+              <label for="cb1A3P">
+                <input
+                  type="checkbox"
+                  name="cbProblema"
+                  id="cb1A3P"
+                  value="Windows 10 | 11"
+                />
+                <span class="checkboxMark"></span>
+                Windows 10 | 11
+              </label>
+            </div>
+            <div class="containerOption">
+              <label for="cb2A3P">
+                <input
+                  type="checkbox"
+                  name="cbProblema"
+                  id="cb2A3P"
+                  value="Pacote Office"
+                />
+                <span class="checkboxMark"></span>
+                Pacote Office
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- Rede -->
+<div class="containerAction containerQuestions">
+    <div class="containerQuestion">
+      <h1 class="question">O que deseja?</h1>
+      <div class="containerOptions">
+        <div class="containerOption">
+          <label for="rd1P2">
+            <input
+              type="radio"
+              name="rdAcao"
+              id="rd1P2"
+              value="Instalação de rede"
+            />
+            <span class="radioMark"></span>
+            Instalação de rede
+          </label>
+        </div>
+        <div class="containerOption">
+          <label for="rd2P2">
+            <input
+              type="radio"
+              name="rdAcao"
+              id="rd2P2"
+              value="Manutenção de rede"
+            />
+            <span class="radioMark"></span>
+            Manutenção de rede
+          </label>
+        </div>
+        <div class="containerOption">
+          <label for="rd3P2">
+            <input type="radio" name="rdAcao" id="rd3P2" value="Expansão de rede" />
+            <span class="radioMark"></span>
+            Expansão de rede
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+      <!-- Rede > Manutenção > Problemas -->
+      <div class="containerProblem containerQuestions">
+        <div class="containerQuestion">
+          <h1 class="question">Selecione o(s) problema(s)</h1>
+          <div class="containerOptions">
+            <div class="containerOption">
+              <label for="cb1A4P">
+                <input type="checkbox" name="cbProblema" id="cb1A4P" value="Queda frequente de conexão" />
+                <span class="checkboxMark"></span>
+                Queda frequente de conexão
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <div class="containerQuestions" id="containerTextareaServiço">
-            <div class="containerQuestion">
-                <h1 class="question">Outro </h1>
-                <p class="desc">Dê mais detalhes</p>
-                <textarea></textarea>
+      <!-- Câmeras -->
+      <div class="containerAction containerQuestions">
+        <div class="containerQuestion">
+          <h1 class="question">O que deseja?</h1>
+          <div class="containerOptions">
+            <div class="containerOption">
+              <label for="rd1P3">
+                <input
+                  type="radio"
+                  name="rdAcao"
+                  id="rd1P3"
+                  value="Instalação"
+                />
+                <span class="radioMark"></span>
+                Instalação
+              </label>
             </div>
+            <div class="containerOption">
+              <label for="rd2P3">
+                <input
+                  type="radio"
+                  name="rdAcao"
+                  id="rd2P3"
+                  value="Manutenção"
+                />
+                <span class="radioMark"></span>
+                Manutenção
+              </label>
+            </div>
+          </div>
         </div>
+      </div>
+      <!-- Câmeras > Instalação > Problemas -->
+      <div class="containerProblem containerQuestions">
+        <div class="containerQuestion">
+          <h1 class="question">Selecione o(s) problema(s)</h1>
+          <div class="containerOptions">
+            <div class="containerOption">
+              <label for="cb1A5P">
+                <input type="checkbox" name="cbProblema" id="cb1A5P" value="Cabeamento a ser feito" />
+                <span class="checkboxMark"></span>
+                Cabeamento a ser feito
+              </label>
+            </div>
+            <div class="containerOption">
+              <label for="cb2A6P">
+                <input type="checkbox" name="cbProblema" id="cb2A6P" value="Configuração de DVR" />
+                <span class="checkboxMark"></span>
+                Configuração de DVR
+              </label>
+            </div>
+            <div class="containerOption">
+              <label for="cb3A7P">
+                <input type="checkbox" name="cbProblema" id="cb3A7P" value="Posicionamento de câmeras" />
+                <span class="checkboxMark"></span>
+                Posicionamento de câmeras
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+   <!-- Câmeras > Manutenção > Problemas -->
+   <div class="containerProblem containerQuestions">
+    <div class="containerQuestion">
+      <h1 class="question">Selecione o(s) problema(s)</h1>
+      <div class="containerOptions">
+        <div class="containerOption">
+          <label for="cb1A8P">
+            <input type="checkbox" name="cbProblema" id="cb1A8P" value="Câmera sem imagem" />
+            <span class="checkboxMark"></span>
+            Câmera sem imagem
+          </label>
+        </div>
+        <div class="containerOption">
+          <label for="cb2A9P">
+            <input type="checkbox" name="cbProblema" id="cb2A9P" value="Câmera com imagem escura" />
+            <span class="checkboxMark"></span>
+            Câmera com imagem escura
+          </label>
+        </div>
+        <div class="containerOption">
+          <label for="cb3A10P">
+            <input type="checkbox" name="cbProblema" id="cb3A10P" value="DVR não grava" />
+            <span class="checkboxMark"></span>
+            DVR não grava
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <!-- OUTRO -->
+      <div class="containerQuestions" id="containerTextareaServiço">
+        <div class="containerQuestion">
+          <h1 class="question">Outro</h1>
+          <p class="desc">Dê mais detalhes</p>
+          <textarea></textarea>
+        </div>
+      </div>
     </section>
+
     <section>
-        <h1>Sessão 3</h1>
+      <h1>Sessão 3</h1>
     </section>
     <footer>
-        <div class="containerButtons">
-            <button class="buttonBack" id="buttonBack">Voltar</button>
-            <button class="buttonNext" id="buttonNext">próximo</button>
-        </div>
+      <div class="containerButtons">
+        <button class="buttonBack" id="buttonBack">Voltar</button>
+        <button class="buttonNext" id="buttonNext">próximo</button>
+      </div>
     </footer>
 
-
     <script src="script/script.js" type="module"></script>
-</body>
+  </body>
 </html>
