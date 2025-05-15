@@ -53,62 +53,65 @@ const exibirSections = () =>{
 
 buttonNext.addEventListener("click",()=>{
         // Verifica os campos do formulario na primeira sessão
-        // if(actualSection == 0){
-        //     formDadosPessoais.nome = document.getElementById('txtNome').value;
-        //     if(formDadosPessoais.nome == ''){
-        //         popupMsg('error','Digite seu nome completo!','Aviso');
-        //         return;
-        //     }
-        //     formDadosPessoais.telefone = document.getElementById('numTel').value;
-        //     const numeroLimpo = formDadosPessoais.telefone.replace(/\D/g, '');
-        //     if(numeroLimpo.length < 10){
-        //         popupMsg('error','Telefone incompleto! Digite o DDD e o número completo.','Aviso');
-        //         return;
-        //     }
-        //     if(numeroLimpo.length === 10 && numeroLimpo.charAt(2) === '9'){
-        //         popupMsg('error','Número de celular incompleto! Verifique se digitou o 9 e todos os outros dígitos.','Aviso');
-        //         return;
-        //     }
-        //     formDadosPessoais.rua = document.getElementById('txtEndereco').value;
-        //     if(formDadosPessoais.rua == ''){
-        //         popupMsg('error','Digite seu endereço!','Aviso');
-        //         return;
-        //     }
-        //     formDadosPessoais.numero = document.getElementById('numNumero').value;
-        //     if(formDadosPessoais.numero == ''){
-        //         popupMsg('error','Digite o número de sua casa!','Aviso');
-        //         return;
-        //     }
-        //     formDadosPessoais.bairro = document.getElementById('txtBairro').value;
-        //     if(formDadosPessoais.bairro == ''){
-        //         popupMsg('error','Digite seu bairro!','Aviso');
-        //         return;
-        //     }
-        //     formDadosPessoais.cidade = document.getElementById('txtCidade').value;
-        //     if(formDadosPessoais.cidade == ''){
-        //         popupMsg('error','Digite sua cidade!','Aviso');
-        //         return;
-        //     }
-        //     formDadosPessoais.complemento = document.getElementById('txtBairro').value;
-        // }
+        if(actualSection == 0){
+            formDadosPessoais.nome = document.getElementById('txtNome').value;
+            if(formDadosPessoais.nome == ''){
+                popupMsg('error','Digite seu nome completo!','Aviso');
+                return;
+            }
+            formDadosPessoais.telefone = document.getElementById('numTel').value;
+            const numeroLimpo = formDadosPessoais.telefone.replace(/\D/g, '');
+            if(numeroLimpo.length < 10){
+                popupMsg('error','Telefone incompleto! Digite o DDD e o número completo.','Aviso');
+                return;
+            }
+            if(numeroLimpo.length === 10 && numeroLimpo.charAt(2) === '9'){
+                popupMsg('error','Número de celular incompleto! Verifique se digitou o 9 e todos os outros dígitos.','Aviso');
+                return;
+            }
+            formDadosPessoais.rua = document.getElementById('txtEndereco').value;
+            if(formDadosPessoais.rua == ''){
+                popupMsg('error','Digite seu endereço!','Aviso');
+                return;
+            }
+            formDadosPessoais.numero = document.getElementById('numNumero').value;
+            if(formDadosPessoais.numero == ''){
+                popupMsg('error','Digite o número de sua casa!','Aviso');
+                return;
+            }
+            formDadosPessoais.bairro = document.getElementById('txtBairro').value;
+            if(formDadosPessoais.bairro == ''){
+                popupMsg('error','Digite seu bairro!','Aviso');
+                return;
+            }
+            formDadosPessoais.cidade = document.getElementById('txtCidade').value;
+            if(formDadosPessoais.cidade == ''){
+                popupMsg('error','Digite sua cidade!','Aviso');
+                return;
+            }
+            formDadosPessoais.complemento = document.getElementById('txtBairro').value;
+        }
         
         actualSection += 1;  
-        if(actualSection <= 3){
+        console.log(actualSection)
+        if(actualSection <= 2){
             exibirSections();
         }
-        if(actualSection == 3){
+        if(actualSection == 2){
+            getProblemas();
             loadMsg();
         }   
-        if(actualSection == 2){
+        if(actualSection == 1){
+            buttonNext.innerText = "Finalizar";
+        }
+        if(actualSection == 3){
             if(dadosSelecionados.servico == null){
                 popupMsg('error','Selecione um serviço!','Erro ao continuar!');
                 actualSection -= 1;  
                 exibirSections();
                 return;
             }
-            buttonNext.innerText = "Finalizar";
-        }else{
-            buttonNext.innerText = "Próximo";
+            return;
         }
     if(actualSection > 0){
         buttonBack.style.display = "flex";
@@ -142,15 +145,10 @@ numTel.addEventListener("keypress",(e)=>{
 
 const formatTel = () =>{
     let valor = numTel.value.replace(/\D/g, '').slice(0, 11); 
-      
-    // while (valor.length < 11) {
-    //   valor += '_';
-    // }
 
-    // Aplica a máscara: (XX) XXXXX-XXXX]
+    // Aplica a máscara: (XX) XXXXX-XXXX
     let formatado = `(${valor.substring(0,2)})${valor.substring(2,7)}-${valor.substring(7,11)}`;
     numTel.value = formatado;
-    let valorNormal = valor.replace(/\D/g, '').slice(0, 11); // Só os números
 }
 
 const popupMsg = (icon,txtMsg,txtTitle) =>{
@@ -177,22 +175,32 @@ const loadMsg = () => {
 
 
     let msgInfoAparelho = '*Informações dos Serviços:* %0A';
-    msgInfoAparelho = msgInfoAparelho.concat('*Serviço: *',dadosSelecionados.servico,'%0A');
+    msgInfoAparelho = msgInfoAparelho.concat('*Serviço:* ',dadosSelecionados.servico,'%0A');
     if (dadosSelecionados.problemas && dadosSelecionados.problemas.length > 0) {
         const listaProblemas = dadosSelecionados.problemas
             .map(problema => `- ${problema}`)
             .join('%0A');
-    
-        msgInfoAparelho = msgInfoAparelho.concat('*Problemas:* %0A', listaProblemas,"%0A");
+        msgInfoAparelho = msgInfoAparelho.concat('*Problema(s):* %0A', listaProblemas,"%0A");
     } else {
-        msgInfoAparelho = msgInfoAparelho.concat('\n\n*Problemas:* Nenhum problema selecionado.');
+        actualSection -= 1;
+        exibirSections();
+        popupMsg('error','Selecione pelo menos um problema','Erro ao enviar a mensagem');
+        return;
     }
 
+    // PEGANDO O OUTRO
+    let txtOutro = document.getElementById("txtOutro").value;
+    let msgOutro = "";
+    if(txtOutro != ""){
+        msgOutro = `%0AOutro: ${txtOutro}`;
+    }
     let url = new String(
         "https://api.whatsapp.com/send?phone=5511949335503&text="
       );
-      url = url.concat(msgInfoCliente,msgInfoAparelho);
-      window.open(url, '_blank');
+    url = url.concat(msgInfoCliente,msgInfoAparelho,msgOutro);
+    console.log(url);
+    window.open(url, '_blank');
+    window.location.reload();
 }
 
 import { fluxo,getProblemas,dadosSelecionados} from "./fluxo.js";
