@@ -1,9 +1,6 @@
 .logo{
-        width: 100px;
-        height: 30px;
-    position: absolute;
-    top: 10px;
-    left: 10px;
+    width: 150px;
+    height: 50px;
 }
 
 header{
@@ -354,4 +351,12 @@ footer .containerButtons{
     color: var(--cor1);
     cursor: pointer;
     outline: 1px solid var(--cor1);
+}
+
+
+/* COMPUTADOR E MAIS */
+@media (min-height: 600px) and (min-width: 700px) {
+    body{
+        width: 500px;
+    }
 }

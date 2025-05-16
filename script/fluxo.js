@@ -86,5 +86,6 @@ const limparCheckbox = ()=>{
 const getProblemas = () => {
     const selecionados = cbProblema.filter(cb => cb.checked).map(cb => cb.value);
     dadosSelecionados.problemas = selecionados;
+    
 };
 export {fluxo,getProblemas,dadosSelecionados};
